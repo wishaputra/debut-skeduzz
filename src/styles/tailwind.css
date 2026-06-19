@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-game: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --color-vt-red: #E21E2C; /* Premium Crimson Red */
+  --color-vt-darkred: #9F121C; /* Dark Crimson */
+  --color-vt-black: #0C0C0E; /* Dark Charcoal Background */
+  --color-vt-gray: #18181C; /* Dark Card Background */
+  --color-vt-white: #F4F4F6; /* Soft White Text */
+  --color-hud-bg: rgba(18, 18, 22, 0.8); /* Blurry dark menu bg */
+  --animate-spin-slow: spin 6s linear infinite;
+  --animate-bounce-fast: bounce 0.8s infinite;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-vt-black);
+    color: var(--color-vt-white);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-game);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px var(--color-vt-red);
+  }
+  .text-stroke-sm {
+    -webkit-text-stroke: 1px var(--color-vt-red);
+  }
+  .text-stroke-black {
+    -webkit-text-stroke: 2px var(--color-vt-white);
+  }
+}
+
