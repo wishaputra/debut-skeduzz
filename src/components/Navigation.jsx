@@ -1,12 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
-import { User, BookOpen, ImageIcon, Heart } from 'lucide-react';
+import { User, BookOpen, ImageIcon, Heart, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const NAV_ITEMS = [
   { path: '/intro', label: 'Intro', icon: User },
   { path: '/biodata', label: 'Bio', icon: Heart },
-  { path: '/lore', label: 'Lore', icon: BookOpen },
   { path: '/charsheet', label: 'Gallery', icon: ImageIcon },
+  { path: '/lore', label: 'Lore', icon: BookOpen },
+  { path: '/credit', label: 'Credit', icon: Star },
 ];
 
 export default function Navigation() {
@@ -29,8 +30,8 @@ export default function Navigation() {
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.95 }}
               className={`py-2.5 px-4 rounded-2xl border transition-all duration-300 flex flex-col items-center gap-1 min-w-[76px]
-                ${isActive 
-                  ? 'bg-vt-red border-transparent text-white shadow-md shadow-vt-red/30' 
+                ${isActive
+                  ? 'bg-vt-red border-transparent text-white shadow-md shadow-vt-red/30'
                   : 'bg-transparent border-transparent text-stone-400 hover:text-vt-red hover:bg-white/5'}`}
             >
               <Icon size={20} />

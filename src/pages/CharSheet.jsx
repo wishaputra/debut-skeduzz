@@ -15,19 +15,15 @@ export default function CharSheet() {
       </h1>
 
       <div className="bg-vt-gray border border-white/5 p-4 rounded-3xl shadow-2xl shadow-black/60 transition-all duration-300 hover:shadow-rose-950/20 max-w-4xl w-full">
-        <motion.img 
-          src={charSheet} 
-          alt="Character Sheet" 
+        <motion.img
+          src={charSheet}
+          alt="Character Sheet"
           className="w-full h-auto object-cover rounded-2xl"
           initial={{ filter: 'grayscale(100%)' }}
           whileHover={{ filter: 'grayscale(0%)' }}
           transition={{ duration: 0.4 }}
         />
       </div>
-      
-      <p className="mt-8 text-sm font-bold tracking-widest text-vt-red bg-vt-red/10 px-6 py-3 border border-vt-red/20 rounded-full uppercase">
-        Hover gambar untuk melihat warna asli!
-      </p>
     </motion.div>
   );
 }

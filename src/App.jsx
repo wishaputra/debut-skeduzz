@@ -6,6 +6,9 @@ import Introduction from './pages/Introduction';
 import Biodata from './pages/Biodata';
 import Lore from './pages/Lore';
 import CharSheet from './pages/CharSheet';
+import Gaming from './pages/Gaming';
+import Anime from './pages/Anime';
+import Credit from './pages/Credit';
 import Navigation from './components/Navigation';
 import Transition from './components/Transition';
 
@@ -36,6 +39,9 @@ function App() {
           <Route path="/biodata" element={<Biodata />} />
           <Route path="/lore" element={<Lore />} />
           <Route path="/charsheet" element={<CharSheet />} />
+          <Route path="/gaming" element={<Gaming />} />
+          <Route path="/anime" element={<Anime />} />
+          <Route path="/credit" element={<Credit />} />
         </Routes>
       </AnimatePresence>
 
