@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
 const CREDITS = [
-  { role: "L2D Art & Rig", name: "Creator Name" },
-  { role: "Char debut", name: "Creator Name" },
+  { role: "L2D Art & Rig", name: "Dino Tisoshi " },
+  { role: "Char debut", name: "Dino Tisoshi" },
   { role: "CSS / Web", name: "Skeduzz" },
 ];
 
