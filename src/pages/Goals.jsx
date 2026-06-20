@@ -1,26 +1,20 @@
 import { motion } from 'framer-motion';
-import { Trophy, CheckCircle2, Lock, Flame, Play } from 'lucide-react';
+import { Lock } from 'lucide-react';
 
 const GOAL_CATEGORIES = [
     {
         title: "Sedikit pencapaian",
         description: "Something yang pengen di capai",
-        icon: Play,
-        glowColor: "rgba(226, 30, 44, 0.15)",
-        borderColor: "border-vt-red/20",
-        iconColor: "text-vt-red",
         goals: [
-            { name: "Debut Stream", status: "completed", value: "Done" },
-            { name: "First Game Walkthrough", status: "completed", value: "Done" },
-            { name: "12-Hour Endurance Stream", status: "in-progress", value: "Active" },
-            { name: "Karaoke Stream", status: "locked", value: "Locked" },
+            { name: "Menjadi Streamer" },
+            { name: "Punya usaha sendiri" },
+            { name: "Jadi game dev" },
+            { name: "Collab sama bang tara" },
         ]
     },
-
 ];
 
 export default function Goals() {
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -30,34 +24,35 @@ export default function Goals() {
             className="min-h-screen pt-12 pb-32 px-6 md:px-20 bg-vt-black flex flex-col items-center"
         >
             {/* Title */}
-            <div className="flex items-center gap-4 mb-8">
-                <Trophy className="text-vt-red w-10 h-10 drop-shadow-[0_0_15px_rgba(226,30,44,0.6)] animate-pulse" />
-                <h1 className="text-4xl md:text-5xl font-black text-vt-white uppercase font-game tracking-tight text-center">
+            <div className="flex flex-col items-center gap-2 mb-12 text-center">
+                <h1 className="text-4xl md:text-5xl font-black text-vt-white uppercase font-game tracking-tight">
                     Goals Kehidupan
                 </h1>
+                <p className="text-sm font-medium text-stone-500 uppercase tracking-widest font-mono">
+                    // Target & Milestones
+                </p>
             </div>
 
-            {/* Goals List (Wide Box) */}
-            <div className="w-full max-w-3xl flex flex-col gap-6">
+            {/* Goals List */}
+            <div className="w-full max-w-2xl flex flex-col gap-10">
                 {GOAL_CATEGORIES.map((category, idx) => {
-                    const CategoryIcon = category.icon;
                     return (
-                        <motion.div
-                            key={idx}
-                            whileHover={{ y: -4, scale: 1.005 }}
-                            className={`bg-vt-gray border ${category.borderColor} rounded-3xl p-8 flex flex-col shadow-2xl shadow-black/40 relative overflow-hidden transition-all duration-300`}
-                            style={{
-                                background: `radial-gradient(circle at 50% 0%, ${category.glowColor} 0%, rgba(24,24,28,0.5) 70%)`
-                            }}
-                        >
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className={`p-2.5 rounded-2xl bg-vt-black/60 border border-white/5 ${category.iconColor}`}>
-                                    <CategoryIcon className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-vt-white font-game uppercase">{category.title}</h3>
+                        <div key={idx} className="flex flex-col">
+                            {/* Category Header */}
+                            <div className="flex items-center gap-3 mb-6 border-b border-white/[0.05] pb-3">
+                                <span className="w-1 h-5 bg-vt-red rounded-full" />
+                                <h3 className="text-lg font-bold text-vt-white uppercase font-game tracking-wider">
+                                    {category.title}
+                                </h3>
+                                {category.description && (
+                                    <span className="text-xs text-stone-500 font-mono ml-auto hidden sm:inline">
+                                        // {category.description}
+                                    </span>
+                                )}
                             </div>
 
-                            <div className="flex flex-col gap-4">
+                            {/* Goals Items */}
+                            <div className="flex flex-col gap-2.5">
                                 {category.goals.map((goal, gIdx) => {
                                     const isCompleted = goal.status === 'completed';
                                     const isInProgress = goal.status === 'in-progress';
@@ -66,43 +61,52 @@ export default function Goals() {
                                     return (
                                         <div
                                             key={gIdx}
-                                            className={`flex items-center justify-between p-4 rounded-2xl border transition-colors ${isCompleted
-                                                ? 'bg-vt-red/5 border-vt-red/10 text-stone-200'
-                                                : isInProgress
-                                                    ? 'bg-amber-500/5 border-amber-500/20 text-stone-200'
-                                                    : 'bg-vt-black/40 border-white/5 text-stone-500'
-                                                }`}
+                                            className="group flex items-center justify-between p-4 rounded-xl bg-vt-gray border border-white/[0.02] hover:border-vt-red/30 transition-all duration-300"
                                         >
-                                            <div className="flex items-center gap-3">
-                                                {isCompleted && (
-                                                    <CheckCircle2 className="w-5 h-5 text-vt-red shrink-0" />
-                                                )}
-                                                {isInProgress && (
-                                                    <Flame className="w-5 h-5 text-amber-500 animate-pulse shrink-0" />
-                                                )}
-                                                {isLocked && (
-                                                    <Lock className="w-5 h-5 text-stone-600 shrink-0" />
-                                                )}
-                                                <span className={`text-base font-medium ${isLocked ? 'line-through decoration-stone-800' : ''}`}>
+                                            <div className="flex items-center gap-4">
+                                                {/* Status Indicator */}
+                                                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-vt-black border border-white/[0.05]">
+                                                    {isCompleted && (
+                                                        <span className="w-2 h-2 rounded-full bg-vt-red shadow-[0_0_8px_rgba(226,30,44,0.6)]" />
+                                                    )}
+                                                    {isInProgress && (
+                                                        <span className="relative flex h-2 w-2">
+                                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-vt-red opacity-75"></span>
+                                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-vt-red"></span>
+                                                        </span>
+                                                    )}
+                                                    {isLocked && (
+                                                        <Lock className="w-3 h-3 text-stone-600" />
+                                                    )}
+                                                </div>
+                                                <span className={`text-base font-medium tracking-wide transition-colors ${isLocked
+                                                        ? 'text-stone-600 line-through decoration-stone-800'
+                                                        : 'text-stone-300 group-hover:text-vt-white'
+                                                    }`}>
                                                     {goal.name}
                                                 </span>
                                             </div>
-                                            <span className={`text-xs font-bold px-3 py-1 rounded-full border ${isCompleted
-                                                ? 'bg-vt-red/10 border-vt-red/20 text-vt-red'
-                                                : isInProgress
-                                                    ? 'bg-amber-500/10 border-amber-500/20 text-amber-400'
-                                                    : 'bg-stone-900 border-stone-800 text-stone-600'
-                                                }`}>
-                                                {goal.value}
-                                            </span>
+
+                                            {/* Status Badge */}
+                                            {goal.value && (
+                                                <span className={`text-xs font-mono font-bold tracking-widest uppercase px-3 py-1 rounded border transition-all ${isCompleted
+                                                        ? 'bg-vt-red/10 border-vt-red/20 text-vt-red'
+                                                        : isInProgress
+                                                            ? 'bg-vt-red border-vt-red text-white shadow-[0_0_15px_rgba(226,30,44,0.3)] animate-pulse'
+                                                            : 'bg-stone-900 border-stone-800/40 text-stone-600'
+                                                    }`}>
+                                                    {goal.value}
+                                                </span>
+                                            )}
                                         </div>
                                     );
                                 })}
                             </div>
-                        </motion.div>
+                        </div>
                     );
                 })}
             </div>
         </motion.div>
     );
 }
+
