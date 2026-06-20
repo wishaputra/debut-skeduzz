@@ -9,6 +9,7 @@ import CharSheet from './pages/CharSheet';
 import Gaming from './pages/Gaming';
 import Anime from './pages/Anime';
 import Credit from './pages/Credit';
+import Goals from './pages/Goals';
 import Navigation from './components/Navigation';
 import Transition from './components/Transition';
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/charsheet" element={<CharSheet />} />
           <Route path="/gaming" element={<Gaming />} />
           <Route path="/anime" element={<Anime />} />
+          <Route path="/goals" element={<Goals />} />
           <Route path="/credit" element={<Credit />} />
         </Routes>
       </AnimatePresence>

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { User, BookOpen, ImageIcon, Heart, Star } from 'lucide-react';
+import { User, BookOpen, ImageIcon, Heart, Star, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const NAV_ITEMS = [
@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { path: '/biodata', label: 'Bio', icon: Heart },
   { path: '/charsheet', label: 'Gallery', icon: ImageIcon },
   { path: '/lore', label: 'Lore', icon: BookOpen },
+  { path: '/goals', label: 'Goals', icon: Trophy },
   { path: '/credit', label: 'Credit', icon: Star },
 ];
 

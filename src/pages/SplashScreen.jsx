@@ -3,6 +3,10 @@ import GameButton from '../components/GameButton';
 import BouncingChibi from '../components/BouncingChibi';
 import chibi1 from '../assets/chibi1.png';
 import chibi2 from '../assets/chibi2.png';
+import ayamskeduzz from '../assets/ayamskeduzz.png';
+import scene1 from '../assets/Scene1.gif';
+
+const BACKDROP_DURATIONS = [5.2, 4.8, 7.1, 9.3, 6.4, 8.2, 5.9, 7.5, 8.8, 6.1, 9.9, 4.3];
 
 export default function SplashScreen({ onPlay }) {
   return (
@@ -24,7 +28,7 @@ export default function SplashScreen({ onPlay }) {
               scale: [1, 1.05, 1],
             }}
             transition={{
-              duration: Math.random() * 6 + 4,
+              duration: BACKDROP_DURATIONS[i % BACKDROP_DURATIONS.length],
               repeat: Infinity,
               ease: "easeInOut"
             }}
@@ -53,6 +57,26 @@ export default function SplashScreen({ onPlay }) {
         initialVelocityX={-1.0} 
         initialVelocityY={1.3}
         shadowColor="rgba(159, 18, 28, 0.3)"
+      />
+
+      <BouncingChibi 
+        src={ayamskeduzz} 
+        alt="Ayam Skeduzz" 
+        initialX={window.innerWidth > 800 ? 400 : 150} 
+        initialY={200} 
+        initialVelocityX={1.5} 
+        initialVelocityY={-1.1}
+        shadowColor="rgba(255, 240, 0, 0.3)"
+      />
+
+      <BouncingChibi 
+        src={scene1} 
+        alt="Scene 1" 
+        initialX={window.innerWidth > 800 ? 900 : 50} 
+        initialY={450} 
+        initialVelocityX={-1.3} 
+        initialVelocityY={-0.9}
+        shadowColor="rgba(0, 240, 255, 0.3)"
       />
 
       <motion.div

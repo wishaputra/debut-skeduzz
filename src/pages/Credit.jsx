@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 
+import dinoImg from '../assets/dino.png';
+import skeduzzImg from '../assets/chibi2.png';
+
 const CREDITS = [
-  { role: "L2D Art & Rig", name: "Dino Tisoshi " },
-  { role: "Char debut", name: "Dino Tisoshi" },
-  { role: "CSS / Web", name: "Skeduzz" },
+  { role: "L2D Art & Rig", name: "Dino Tisoshi ", image: dinoImg },
+  { role: "Char debut", name: "Dino Tisoshi", image: dinoImg },
+  { role: "CSS / Web", name: "Skeduzz", image: skeduzzImg },
 ];
 
 export default function Credit() {
@@ -29,6 +32,13 @@ export default function Credit() {
             whileHover={{ y: -5, scale: 1.02 }}
             className="bg-vt-gray border border-white/5 rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl shadow-black/40 text-center"
           >
+            {item.image && (
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-24 h-24 rounded-2xl object-cover mb-4 border-2 border-vt-red/30 shadow-md transition-transform duration-300 hover:scale-105"
+              />
+            )}
             <h2 className="text-lg font-bold text-vt-darkred mb-2 uppercase tracking-wider">{item.role}</h2>
             <p className="text-xl font-medium text-stone-200">{item.name}</p>
           </motion.div>
