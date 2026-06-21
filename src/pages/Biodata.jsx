@@ -14,10 +14,13 @@ const LIKES = [
   { label: "Gaming", type: "link", path: "/gaming" },
   { label: "Anime", type: "link", path: "/anime" },
   { label: "Zeta", type: "modal", modalId: "zeta" },
-  { label: "Makan & Minum", type: "modal", modalId: "food" },
+  // { label: "Makan & Minum", type: "modal", modalId: "food" },
   { label: "Cats", type: "modal", modalId: "cats" }
 ];
-const DISLIKES = ["Pemerintah", "Kecoa"];
+const DISLIKES = [
+  "Pemerintah",
+  "Kecoa"
+];
 
 export default function Biodata() {
   const [activeModal, setActiveModal] = useState(null);
@@ -27,7 +30,6 @@ export default function Biodata() {
     if (activeModal === 'zeta') {
       return (
         <div className="flex flex-col items-center justify-center p-10 text-center">
-          <Heart className="w-24 h-24 text-vt-red mb-6 animate-pulse drop-shadow-[0_0_20px_rgba(226,30,44,0.6)]" fill="currentColor" />
           <h2 className="text-3xl font-black text-vt-white mb-4 uppercase font-game">Zeta!</h2>
           <div className="w-64 h-72 bg-vt-black border border-white/10 rounded-3xl flex items-center justify-center overflow-hidden mb-6 shadow-2xl shadow-vt-red/10">
             <img src={zetaImg} alt="Zeta" className="w-full h-full object-cover object-top" />
@@ -66,7 +68,6 @@ export default function Biodata() {
               </div>
             ))}
           </div>
-          <p className="text-stone-300 font-medium text-lg">Kucing itu lucu dan menggemaskan!</p>
         </div>
       );
     }
@@ -92,7 +93,7 @@ export default function Biodata() {
             <h2 className="text-2xl font-bold text-vt-white mb-6 border-b border-white/5 pb-3 uppercase font-game">Base Info</h2>
             <ul className="text-lg space-y-4 mb-8 text-stone-300 font-medium">
               <li><span className="text-vt-red font-semibold">Name:</span> Skeduzz</li>
-              <li><span className="text-vt-red font-semibold">Height:</span> 175cm (Fun Sized)</li>
+              <li><span className="text-vt-red font-semibold">Height:</span> 175cm</li>
               <li><span className="text-vt-red font-semibold">Birthday:</span> 7 March</li>
               <li><span className="text-vt-red font-semibold">Languages:</span> EN/ID</li>
               <li><span className="text-vt-red font-semibold">Color:</span> #E11D48</li>
@@ -152,7 +153,13 @@ export default function Biodata() {
             <div className="flex flex-col gap-4">
               {DISLIKES.map((item, i) => (
                 <div key={i} className="text-xl font-medium text-stone-400 flex items-center gap-3">
-                  <span className="text-vt-darkred/50 text-sm">•</span> {item}
+                  <span className="text-vt-darkred/50 text-sm">•</span>
+                  <span className={item === "Pemerintah" ? "relative inline-block" : ""}>
+                    <span className={item === "Pemerintah" ? "opacity-50" : ""}>{item}</span>
+                    {item === "Pemerintah" && (
+                      <span className="absolute left-[-5%] top-1/2 w-[110%] h-[3px] bg-vt-red -rotate-3 -translate-y-1/2 rounded-full shadow-[0_0_8px_rgba(226,30,44,0.6)]"></span>
+                    )}
+                  </span>
                 </div>
               ))}
             </div>

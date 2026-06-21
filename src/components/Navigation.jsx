@@ -1,14 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
-import { User, BookOpen, ImageIcon, Heart, Star, Trophy } from 'lucide-react';
+import { User, BookOpen, ImageIcon, Heart, Star, Trophy, Video, Share2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const NAV_ITEMS = [
   { path: '/intro', label: 'Intro', icon: User },
   { path: '/biodata', label: 'Bio', icon: Heart },
-  { path: '/charsheet', label: 'Gallery', icon: ImageIcon },
+  { path: '/charsheet', label: 'Design', icon: ImageIcon },
   { path: '/lore', label: 'Lore', icon: BookOpen },
+  { path: '/content', label: 'Content', icon: Video },
   { path: '/goals', label: 'Goals', icon: Trophy },
   { path: '/credit', label: 'Credit', icon: Star },
+  { path: '/social', label: 'Social', icon: Share2 },
 ];
 
 export default function Navigation() {

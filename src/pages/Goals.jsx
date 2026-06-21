@@ -3,13 +3,12 @@ import { Lock } from 'lucide-react';
 
 const GOAL_CATEGORIES = [
     {
-        title: "Sedikit pencapaian",
-        description: "Something yang pengen di capai",
+        title: "Hal yang ingin dicapai",
         goals: [
-            { name: "Menjadi Streamer" },
+            { name: "Debut pertama kali" },
             { name: "Punya usaha sendiri" },
             { name: "Jadi game dev" },
-            { name: "Collab sama bang tara" },
+            { name: "Menjalin kerja sama dengan bang Tara & Gema" },
         ]
     },
 ];
@@ -80,8 +79,8 @@ export default function Goals() {
                                                     )}
                                                 </div>
                                                 <span className={`text-base font-medium tracking-wide transition-colors ${isLocked
-                                                        ? 'text-stone-600 line-through decoration-stone-800'
-                                                        : 'text-stone-300 group-hover:text-vt-white'
+                                                    ? 'text-stone-600 line-through decoration-stone-800'
+                                                    : 'text-stone-300 group-hover:text-vt-white'
                                                     }`}>
                                                     {goal.name}
                                                 </span>
@@ -90,10 +89,10 @@ export default function Goals() {
                                             {/* Status Badge */}
                                             {goal.value && (
                                                 <span className={`text-xs font-mono font-bold tracking-widest uppercase px-3 py-1 rounded border transition-all ${isCompleted
-                                                        ? 'bg-vt-red/10 border-vt-red/20 text-vt-red'
-                                                        : isInProgress
-                                                            ? 'bg-vt-red border-vt-red text-white shadow-[0_0_15px_rgba(226,30,44,0.3)] animate-pulse'
-                                                            : 'bg-stone-900 border-stone-800/40 text-stone-600'
+                                                    ? 'bg-vt-red/10 border-vt-red/20 text-vt-red'
+                                                    : isInProgress
+                                                        ? 'bg-vt-red border-vt-red text-white shadow-[0_0_15px_rgba(226,30,44,0.3)] animate-pulse'
+                                                        : 'bg-stone-900 border-stone-800/40 text-stone-600'
                                                     }`}>
                                                     {goal.value}
                                                 </span>

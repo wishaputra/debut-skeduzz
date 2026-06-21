@@ -10,6 +10,8 @@ import Gaming from './pages/Gaming';
 import Anime from './pages/Anime';
 import Credit from './pages/Credit';
 import Goals from './pages/Goals';
+import Content from './pages/content';
+import Social from './pages/social';
 import Navigation from './components/Navigation';
 import Transition from './components/Transition';
 
@@ -44,6 +46,8 @@ function App() {
           <Route path="/anime" element={<Anime />} />
           <Route path="/goals" element={<Goals />} />
           <Route path="/credit" element={<Credit />} />
+          <Route path="/content" element={<Content />} />
+          <Route path="/social" element={<Social />} />
         </Routes>
       </AnimatePresence>
 

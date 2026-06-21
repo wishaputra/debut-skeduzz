@@ -5,7 +5,6 @@ import skeduzzImg from '../assets/chibi2.png';
 
 const CREDITS = [
   { role: "L2D Art & Rig", name: "Dino Tisoshi ", image: dinoImg },
-  { role: "Char debut", name: "Dino Tisoshi", image: dinoImg },
   { role: "CSS / Web", name: "Skeduzz", image: skeduzzImg },
 ];
 
@@ -25,12 +24,12 @@ export default function Credit() {
         Terima kasih banyak kepada semua pihak yang telah membantu dalam project ini.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+      <div className="flex flex-wrap justify-center gap-6 w-full max-w-4xl">
         {CREDITS.map((item, i) => (
           <motion.div
             key={i}
             whileHover={{ y: -5, scale: 1.02 }}
-            className="bg-vt-gray border border-white/5 rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl shadow-black/40 text-center"
+            className="bg-vt-gray border border-white/5 rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl shadow-black/40 text-center w-full sm:w-[300px]"
           >
             {item.image && (
               <img
